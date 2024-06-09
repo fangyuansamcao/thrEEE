@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Cornell Notes</title> 
+  <link rel="icon" type="image/x-icon" href="images\thrEEE.png">
+  <style>
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      background: linear-gradient(to bottom, rgba(87, 168, 218, 1) 80%, rgba(87, 168, 218, 0.9));
+      padding: 20px;
+      text-align: left;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <!-- Your header with the title -->
+  <header>
+    <nav>
+      <img src="images\thrEEE.png" alt="Logo" style="width:200px;height:10%;">
+        <ul class="nav-links">
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="mailto:extracurricular.application@gmail.com">Contact</a></li>
+          <li><a href="mission.html">Our Mission</a></li>
+        </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <!-- Login Form -->
+    <div class="login-container" id="login-container">
+      <h2>Login</h2>
+      <form id="login-form" onsubmit="return false;">
+        <input type="email" id="login-email" placeholder="Email" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button type="button" onclick="showHome()">Login</button>
+        <p>Don't have an account? <a href="#" onclick="showRegister()">Register here</a></p>
+      </form>
+    </div>
+    
+    <!-- Registration Form -->        
+    <div class="register-container" id="register-container" style="display: none;">
+      <h2>Register</h2>
+      <form id="register-form" onsubmit="return false;">
+        <input type="text" id="register-username" placeholder="Username" required>
+        <input type="email" id="register-email" placeholder="Email" required>
+        <input type="password" id="register-password" placeholder="Password" required>
+        <button type="button" onclick="showHome()">Register</button>
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+      </form>
+    </div>
+
+    <!-- Home Directory -->
+    <div class="home-container" id="home-container" style="display: none;">
+      <h2>Home</h2>
+      <div class="subjects">
+        <!-- Add a new button here -->
+        <button class="create-btn" onclick="openCreateSubjectModal()">Create New Subject</button>
+        <button class="subject-btn" onclick="openFolder('English')">English</button>
+        <button class="subject-btn" onclick="openFolder('Math')">Math</button>
+        <button class="subject-btn" onclick="openFolder('Science')">Science</button>
+        <button class="subject-btn" onclick="openFolder('History')">History</button>
+        <button class="subject-btn" onclick="openFolder('Computer Science')">Comp Sci</button>
+      </div>
+    </div>
+
+    <!-- Modal for creating a new subject -->
+    <div id="createSubjectModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeCreateSubjectModal()">&times;</span>
+        <h3>Create New Subject</h3>
+        <input type="text" id="newSubjectName" placeholder="Enter subject name">
+        <button onclick="addNewSubject()">Create</button>
+      </div>
+    </div>
+
+    <div class="subject-notes-container" id="subject-notes-container" style="display: none;">
+      <h2 id="subject-title"></h2>
+      <button class="new-note-btn" onclick="showNewNoteForm()">New Note</button>
+      <div class="notes-list" id="notes-list"></div>
+    </div>
+
+    <div class="note-container" id="note-container" style="display: none;">
+      <h2>New Note</h2>
+      <form id="note-form" onsubmit="saveNote(); return false;">
+        <input type="text" id="note-title" placeholder="Title" required>
+        <input type="text" id="note-date" placeholder="Date" required>
+        <input type="text" id="note-class" placeholder="Class" required>
+        <input type="text" id="note-professor" placeholder="Professor" required>
+        
+        <div class="cornell-notes">
+          <div class="key-points">
+            <h3>Key Points</h3>
+            <textarea id="note-key-points" placeholder="Key Points"></textarea>
+          </div>
+          
+          <div class="notes">
+            <h3>Notes</h3>
+            <textarea id="note-main" placeholder="Main Notes"></textarea>
+          </div>
+          
+          <div class="summary">
+            <h3>Summary</h3>
+            <textarea id="note-summary" placeholder="Summary"></textarea>
+          </div>
+        </div>
+        
+        <button type="submit">Save Note</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
