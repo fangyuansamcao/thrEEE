@@ -1,2 +1,2 @@
-# A Database of Extracurricular Activities
-A database with 300+ resources for you to find an extracurricular activity which suits you, enriches your highschool experience, and bolsters your college application!
+# thrEEE: Cornell Note Taker
+thrEEE is an innovative online platform designed specifically for high school students to master the art of Cornell note-taking. This user-friendly website provides a structured format that simplifies the process of organizing notes, making study sessions more efficient and effective. With thrEEE, students can easily capture key points, questions, and summaries, enhancing their learning experience and academic performance.
