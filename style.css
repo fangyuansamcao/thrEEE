@@ -151,8 +151,6 @@ nav {
 }
 
 .notes {
-    flex: 2;
-    min-width: 35%; /* Adjust as needed */
     display: block;
     width: 100%;
     overflow: hidden;
