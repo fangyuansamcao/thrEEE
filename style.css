@@ -205,6 +205,15 @@ nav {
     text-indent: 2em; /* or 15px, or 5%, 2rem or 3vw */
 }
 
+note-main {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    resize: both;
+    min-height: 40px;
+    line-height: 20px;
+}
+
 /* Set the height of the title */
 header {
     --title-height: 5rem; /* Adjust this value to your desired height */
